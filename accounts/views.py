@@ -36,7 +36,7 @@ def role_required(allowed_roles=[]):
 
 
 load_dotenv()
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key=os.getenv("AIzaSyBkVt6OpuZIKsGOSaoTxWOERqHA8403wP8"))
 model = genai.GenerativeModel("models/gemini-1.5-flash-latest")
 
 
