@@ -26,7 +26,12 @@ SECRET_KEY = '_-hk_fk#398vam$_#5&xbhv2b(x^t(9xcfuj=ry&+r0s$&@a*z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.onrender.com']
+ALLOWED_HOSTS = [ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "autocontent.onrender.com/"
+]
+]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
