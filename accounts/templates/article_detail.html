@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/article_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="article-wrapper">
+  <div class="article-header">
+    <h1>{{ article.title|truncatechars:60 }}</h1>
+  </div>
+  <div class="article-content">
+    <p>{{ article.content }}</p>
+  </div>
+  <a href="{% url 'recents' %}" class="back-link">Back to Recents</a>
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1c1f2b, #3d4465);
+    color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+}
+
+.recents-container {
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    color: #ffd369;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    background: #f5f5f5;
+    color: #222;
+}
+
+.recents-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.recents-list li {
+    background: #2b2f45;
+    margin: 12px 0;
+    padding: 16px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s ease;
+}
+
+.recents-list li:hover {
+    background: #3c4262;
+}
+
+.recents-list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.recents-list a:hover {
+    color: #ffd369;
+}
+
+.timestamp {
+    font-size: 0.85rem;
+    color: #ccc;
+    white-space: nowrap;
+}
+
+.empty {
+    text-align: center;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background: #ffd369;
+    color: #222;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #ffc107;
+    color: #000;
+}
+
+@media (max-width: 600px) {
+    .recents-container {
+        padding: 30px 20px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .recents-list li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timestamp {
+        margin-top: 8px;
+    }
+}

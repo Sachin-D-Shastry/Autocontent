@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/recents.css' %}">
+<script src="https://kit.fontawesome.com/a2e0f1f6d9.js" crossorigin="anonymous"></script>
+
+<div class="recents-container">
+    <h2><i class="fas fa-history"></i> Your Recent Searches</h2>
+
+    <input type="text" id="searchInput" placeholder="Filter searches..." onkeyup="filterSearches()">
+
+    <ul class="recents-list" id="recentsList">
+        {% for search in searches %}
+            <li>
+                <a href="{% url 'open_content' search.content_id %}">
+                    <i class="fas fa-file-alt"></i> {{ search.query }}
+                </a>
+                <span class="timestamp"><i class="fas fa-clock"></i> {{ search.timestamp|date:"M d, Y H:i" }}</span>
+            </li>
+        {% empty %}
+            <li class="empty"><i class="fas fa-info-circle"></i> No recent searches found.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'workflow' %}" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+</div>
+
+<script>
+    function filterSearches() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let list = document.getElementById("recentsList").getElementsByTagName("li");
+
+        for (let i = 0; i < list.length; i++) {
+            let item = list[i].innerText.toLowerCase();
+            list[i].style.display = item.includes(input) ? "" : "none";
+        }
+    }
+</script>
+{% endblock %}

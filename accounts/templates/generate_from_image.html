@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}AI-Powered Image to Listicle{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/upload_image.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="upload-wrapper">
+  <section class="header-area">
+    <img src="{% static 'images/shine-icon.svg' %}" alt="Magic Icon" class="magic-icon">
+    <h1>Transform Your Image Into a Captivating Listicle</h1>
+    <p>Upload an image and get an instant AI-generated listicle that matches its context and vibe.</p>
+  </section>
+
+  {% if error %}
+  <div class="error-box">
+    <img src="{% static 'images/errors.svg' %}" alt="Error">
+    <span>{{ error }}</span>
+  </div>
+  {% endif %}
+
+  <form method="POST" enctype="multipart/form-data" class="upload-form">
+    {% csrf_token %}
+    <div class="form-control">
+      <label for="image">Upload Image</label>
+      <input type="file" name="image" accept="image/*" required>
+    </div>
+
+    <div class="form-control">
+      <label for="prompt_text">Add a Short Caption (Optional)</label>
+      <textarea name="prompt_text" rows="3" placeholder="e.g., A sunrise over the Himalayas...">{{ prompt_text }}</textarea>
+    </div>
+
+    <button type="submit" class="generate-button">Generate Magic ✨</button>
+  </form>
+
+  {% if image_url %}
+  <section class="result-block">
+    <h2>Your Uploaded Image</h2>
+    <img src="{{ image_url }}" class="uploaded-image" alt="Uploaded Image">
+
+    {% if generated_text %}
+    <h3>AI-Generated Listicle</h3>
+    <div class="listicle-output">
+      {% autoescape off %}
+      {{ generated_text }}
+      {% endautoescape %}
+    </div>
+    {% endif %}
+
+    {% if article %}
+    <a href="{% url 'convert_pdf' article_id=article.id %}" class="pdf-download">
+      Download as PDF 📄
+    </a>
+    {% endif %}
+  </section>
+  {% endif %}
+</div>
+{% endblock %}

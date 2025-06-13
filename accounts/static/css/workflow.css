@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #2b2e4a, #4e54c8);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 25px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.user-info {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.card {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.card h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #fff;
+    color: #4e54c8;
+    border: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #4e54c8;
+    color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logout {
+    display: inline-block;
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #ffdddd;
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 30px 20px;
+    }
+
+    .btn {
+        font-size: 0.95rem;
+        padding: 12px 20px;
+    }
+}
+.dashboard-graphic {
+    max-width: 300px;
+    width: 100%;
+    margin: 20px auto;
+    display: block;
+}

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Generate Content{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/generate.css' %}?v=5">
+{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="graphic">
+        <img src="{% static 'images/hero-generate.svg' %}" alt="Content Illustration">
+    </div>
+    <div class="form-box">
+        <form method="post">
+            {% csrf_token %}
+            <h2>Generate Content</h2>
+
+            {% if error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+
+            <input type="text" name="keywords" placeholder="Enter keywords or bullet points" required>
+
+            <label for="article_type">Select Article Type:</label>
+            <select name="article_type" required>
+                <option value="">--Choose Type--</option>
+                <option value="Listicle">Listicle</option>
+                <option value="Guide">Guide</option>
+                <option value="Review">Review</option>
+            </select>
+
+            <label for="language">Select Language:</label>
+            <select name="language" required>
+                <option value="">--Choose Language--</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Kannada">Kannada</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Telugu">Telugu</option>
+                <option value="Malayalam">Malayalam</option>
+            </select>
+
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+    

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<h2>Search Result</h2>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% if article %}
+    <div>
+        <h3>{{ article.title|truncatechars:60 }}</h3>
+<p>{{ article.content|truncatewords:30 }}</p>
+<a href="{% url 'article_detail' article.id %}">Read More</a>
+        
+    </div>
+{% else %}
+    <p>No article found for: <strong>{{ query }}</strong></p>
+{% endif %}
+
+<a href="{% url 'recents' %}">Back to Home</a>
+
+{% endblock %}

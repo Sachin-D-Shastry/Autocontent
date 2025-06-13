@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>403 - Unauthorized</title>
+    <link rel="stylesheet" href="{% static 'css/unauthorized.css' %}">
+</head>
+<body>
+    <div class="unauth-wrapper">
+        <img src="{% static 'images/lock-icon.svg' %}" alt="Lock Icon" class="lock-icon">
+        <h1>403 - Unauthorized</h1>
+        <p>You do not have permission to view this page.</p>
+        <a href="/" class="home-link">← Go back to Home</a>
+    </div>
+</body>
+</html>

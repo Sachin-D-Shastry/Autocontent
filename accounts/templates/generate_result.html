@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Generated Result - AutoContent{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/generate_result.css' %}?v=123">
+{% endblock %}
+
+
+{% block content %}
+  <h1>Generated Text</h1>
+  <p><strong>Language:</strong> {{ language }}</p>
+
+  <div class="content-box" id="generatedContent">{{ content }}</div>
+<p id="wordCount">Word count: 0</p>
+
+
+  <form method="post">
+      {% csrf_token %}
+      <input type="hidden" name="language" value="{{ language }}">
+      <input type="hidden" name="keywords" value="{{ request.POST.keywords }}">
+      <input type="hidden" name="article_type" value="{{ article_type }}">
+  </form>
+
+  <form action="{% url 'generate' %}" method="get">
+      <button type="submit">Generate Another</button>
+  </form>
+
+  {% if article %}
+    <a href="{% url 'convert_pdf' article_id=article.id %}" class="download-btn">Download PDF</a>
+
+  {% endif %}
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const content = document.getElementById('generatedContent').innerText.trim();
+    const wordCount = content === "" ? 0 : content.split(/\s+/).length;
+    document.getElementById('wordCount').textContent = `Word count: ${wordCount}`;
+  });
+</script>
+
+{% endblock %}

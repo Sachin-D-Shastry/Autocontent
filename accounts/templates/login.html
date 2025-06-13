@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}?v=124">
+</head>
+<body>
+    <div class="container">
+        <div class="graphic">
+            <img src="{% static 'images/hero-login.svg' %}" alt="Login Graphic">
+        </div>
+        <div class="form-box">
+            {% if error %}
+            <p style="color:red;">{{ error }}</p>
+            {% endif %}
+            <form method="post">
+                {% csrf_token %}
+                <h2>Login</h2>
+                {% if error %}
+                    <p class="error">{{ error }}</p>
+                {% endif %}
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+
+                <label for="role">Select Role:</label>
+                <select name="role" required>
+                    <option value="">--Choose Role--</option>
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                </select>
+                <div class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"></div>
+                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
+                <button type="submit">Login</button>
+                <p>Don't have an account? <a href="{% url 'signup' %}">Signup here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 ContentGen. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Help</a>
+        </div>
+    </footer>
+    <script src="{% static 'scripts/signup.js' %}"></script>
+
+</body>
+</html>

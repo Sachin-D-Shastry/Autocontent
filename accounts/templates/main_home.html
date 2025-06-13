@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <meta charset="UTF-8">
+    <title>ContentCraft AI</title>
+    <link rel="stylesheet" href="{% static 'css/main_home.css' %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div id="geo-greeting" class="geo-box">
+    <p id="greeting-text">Loading your greeting...</p>
+    <p id="local-time"></p>
+    <p id="weather"></p>
+</div>
+
+    <div id="particles-js"></div>
+
+    <div id="quote-box" class="quote-box">
+  <p id="daily-quote"></p>
+</div>
+
+    <!-- Top Right Controls -->
+    <div class="top-right">
+        <a href="{% url 'home' %}" class="search-btn">
+            <i class="fas fa-magnifying-glass"></i> Search Engine
+        </a>
+        <input type="checkbox" id="toggle-theme" />
+        <label for="toggle-theme" class="theme-toggle">
+            <i class="fas fa-sun"></i><i class="fas fa-moon"></i>
+        </label>
+    </div>
+
+    <!-- Background Shapes -->
+    <div class="background-shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to <span>ContentCraft AI</span></h1>
+        <p>Your creative assistant for smarter content</p>
+    </div>
+
+    <!-- Icons & Features -->
+    <div class="features">
+        <div class="feature-box">
+            <i class="fas fa-pen-nib"></i>
+            <h3>Creative Writing</h3>
+            <p>Generate blogs, guides, reviews, and more.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-chart-line"></i>
+            <h3>Analytics Powered</h3>
+            <p>Use SEO and trends to auto-schedule posts.</p>
+        </div>
+        <div class="feature-box">
+            <i class="fas fa-users"></i>
+            <h3>Team Roles</h3>
+            <p>Assign tasks to Editors, Authors & Analysts.</p>
+        </div>
+    </div>
+
+    <!-- Personal Touch Section -->
+    <div class="personal-touch">
+        <h2>Built with ❤️ for my beloved</h2>
+        <p>ContentCraft AI isn't just smart – it's made for people who care about quality, aesthetics, and impact.</p>
+    </div>
+
+<script src="{% static 'scripts/main_home.js' %}"></script>
+
+
+</body>
+</html>

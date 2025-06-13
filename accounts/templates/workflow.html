@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - AutoContent</title>
+    <link rel="stylesheet" href="{% static 'css/workflow.css' %}?v=125">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">AutoContent</div>
+            <div class="user-info">
+                Welcome, <strong>{{ request.user.username }}</strong>
+            </div>
+        </header>
+
+        <main class="card">
+            <h1>Your Dashboard</h1>
+            <p>Select a task to begin:</p>
+            <img src="{% static 'images/workflow-illustration.svg' %}" alt="Workflow Graphic" class="dashboard-graphic">
+            <div class="actions">
+                <a href="{% url 'recents' %}" class="btn">View Recents</a>
+
+                {% if role == 'Admin' %}
+                    <a href="{% url 'admin_dashboard' %}" class="btn">Admin Dashboard</a>
+
+                {% elif role == 'Editor' %}
+                    <a href="{% url 'editor_dashboard' %}" class="btn">Editor Dashboard</a>
+
+                {% elif role == 'SEO Analyst' %}
+                    <a href="{% url 'seo_dashboard' %}" class="btn">SEO Dashboard</a>
+                    <a href="{% url 'search' %}" class="btn">Search Content</a>
+                    <a href="{% url 'suggest_keywords' %}" class="btn">Suggest Keywords</a>
+
+                {% else %}
+                    <a href="{% url 'generate' %}" class="btn">Generate Content</a>
+                    <a href="{% url 'generate_from_image' %}" class="btn">Generate from Image</a>
+                {% endif %}
+            </div>
+            <a href="{% url 'logout' %}" class="logout">Logout</a>
+        </main>
+
+        <footer>
+            &copy; 2025 AutoContent. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>

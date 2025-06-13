@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/admin_dashboard.css' %}">
+</head>
+<body>
+
+    <header>
+        Admin Dashboard
+    </header>
+
+    <nav>
+        <a href="{% url 'generate' %}">Generate Content</a>
+        <a href="{% url 'recents' %}">Recent Articles</a>
+        <a href="{% url 'suggest_keywords' %}">Keyword Suggestions</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    </nav>
+
+    <div class="dashboard-container">
+        <h2 class="dashboard-title">Welcome, Admin!</h2>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Articles</h3>
+                <p>124</p>
+            </div>
+            <div class="card">
+                <h3>Pending Reviews</h3>
+                <p>8</p>
+            </div>
+            <div class="card">
+                <h3>Generated PDFs</h3>
+                <p>42</p>
+            </div>
+            <div class="card">
+                <h3>Registered Users</h3>
+                <p>37</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

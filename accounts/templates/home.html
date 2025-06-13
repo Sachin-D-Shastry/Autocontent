@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome - AutoContent</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}?v=124">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="hero">
+        <nav>
+            <div class="logo">AutoContent</div>
+            <div class="nav-links">
+                <a href="{% url 'signup' %}">Sign Up</a>
+                <a href="{% url 'login' %}">Login</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <h1>Effortless Content Creation</h1>
+            <p>AI-powered workflows to generate, refine, and optimize your articles</p>
+            <div class="buttons">
+                <a href="{% url 'signup' %}" class="btn">Get Started</a>
+                <a href="{% url 'login' %}" class="btn secondary">Log In</a>
+            </div>
+        </div>
+
+        <img src="{% static 'images/hero-graphic.svg' %}" alt="Hero Graphic" class="hero-graphic">
+    </div>
+
+    <footer>
+        <p>&copy; 2025 AutoContent. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms</a>
+            <a href="#">Support</a>
+        </div>
+    </footer>
+</body>
+</html>
