@@ -1,0 +1,157 @@
+/* generate_result.css */
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #1b1e3a, #2e326f);
+  color: #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffd54f;
+  text-align: center;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+
+.content-box {
+  background: rgba(33, 37, 65, 0.85);
+  max-width: 800px;
+  width: 100%;
+  padding: 30px 40px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f5f5f5;
+  margin-bottom: 40px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+form {
+  margin-bottom: 20px;
+  width: 250px;
+  text-align: center;
+}
+
+button {
+  background-color: #90caf9;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  color: #1b1e3a;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
+  box-shadow: 0 6px 16px rgba(144, 202, 249, 0.4);
+}
+
+button:hover {
+  background-color: #64b5f6;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(100, 181, 246, 0.5);
+  transform: translateY(-3px);
+}
+
+.download-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background-color: #66bb6a;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(102, 187, 106, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #43a047;
+  box-shadow: 0 10px 30px rgba(67, 160, 71, 0.6);
+  transform: translateY(-3px);
+}
+
+.btn-logout {
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 16px rgba(231, 76, 60, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  font-size: 1.1rem;
+  display: inline-block;
+  margin-top: 10px;
+  width: auto;
+  text-align: center;
+}
+
+.btn-logout:hover {
+  background-color: #c0392b;
+  box-shadow: 0 10px 30px rgba(192, 57, 43, 0.6);
+  transform: translateY(-3px);
+}
+
+input,
+textarea {
+  appearance: none;
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  outline: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7 10L0.0717968 0.25L13.9282 0.25L7 10Z' fill='%23cccccc'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 12px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #bbbbbb;
+}
+
+input:focus,
+textarea:focus {
+  border: 2px solid #90caf9;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.preview-img {
+  max-width: 100%;
+  border-radius: 14px;
+  margin: 20px 0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .content-box {
+    padding: 20px 25px;
+  }
+
+  button,
+  .download-btn,
+  .btn-logout {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
